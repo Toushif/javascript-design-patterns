@@ -9,8 +9,8 @@
 
 // To demonstrate the Command pattern we're going to create a simple car purchasing service.
 
-(function () {
-    var carManager = {
+var carManager = (function () {
+    return {
         // request information
         requestInfo: function (model, id) {
             return (
@@ -44,10 +44,6 @@
 
 //   Let's now expand on our carManager so that our application of the Command pattern results in the following: accept any named methods that can be performed on the carManager object, passing along any data that might be used such as the Car model and ID.
 
-//   Here is what we would like to be able to achieve:
-
-carManager.execute("buyVehicle", "Ford Escort", "453543");
-
 //   As per this structure we should now add a definition for the carManager.execute method as follows:
 
 carManager.execute = function (name) {
@@ -57,9 +53,15 @@ carManager.execute = function (name) {
     );
 };
 
+//   Here is what we would like to be able to achieve:
+
+const log = console.log
+
+log(carManager.execute("buyVehicle", "Ford Escort", "453543"));
+
 // Our final sample calls would thus look as follows:
 
-carManager.execute("arrangeViewing", "Ferrari", "14523");
-carManager.execute("requestInfo", "Ford Mondeo", "54323");
-carManager.execute("requestInfo", "Ford Escort", "34232");
-carManager.execute("buyVehicle", "Ford Escort", "34232");
+log(carManager.execute("arrangeViewing", "Ferrari", "14523"));
+log(carManager.execute("requestInfo", "Ford Mondeo", "54323"));
+log(carManager.execute("requestInfo", "Ford Escort", "34232"));
+log(carManager.execute("buyVehicle", "Ford Escort", "34232"));

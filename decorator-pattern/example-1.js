@@ -1,4 +1,4 @@
-// The Decorator Pattern
+// The Decorator Pattern - Structural Patterns
 // Decorators are a structural design pattern that aim to promote code re-use. Similar to Mixins, they can be considered another viable alternative to object sub-classing.
 
 // Classically, Decorators offered the ability to add behaviour to existing classes in a system dynamically. The idea was that the decoration itself wasn't essential to the base functionality of the class, otherwise it would be baked into the superclass itself.
@@ -190,7 +190,7 @@ var Macbook = function(){
     //...
 };
 
-var  MacbookWith4GBRam = function(){},
+var MacbookWith4GBRam = function(){},
  MacbookWith8GBRam = function(){},
  MacbookWith4GBRamAndEngraving = function(){},
  MacbookWith8GBRamAndEngraving = function(){},
